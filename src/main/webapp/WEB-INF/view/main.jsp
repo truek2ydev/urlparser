@@ -1,13 +1,14 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html lang="ko">
 <head>
   <title>WebJars Demo</title>
-  <#--<link rel="stylesheet" href="/webjars/bootstrap/3.3.7-1/css/bootstrap.min.css" />-->
-  <link rel="stylesheet" type="text/html" href="/webjars/bootstrap/3.3.7-1/css/bootstrap.min.css" />
+  <%--<link rel="stylesheet" href="/webjars/bootstrap/3.3.7-1/css/bootstrap.min.css" />--%>
 </head>
 <body>
 <body>
-asdfasdfasdf
+<h1>JSP</h1>
 <div class="container"><br/>
   <div class="alert alert-success">
     <a href="#" class="close" data-dismiss="alert"
@@ -22,17 +23,13 @@ asdfasdfasdf
 <script type="text/javascript">
     //<![CDATA[
 
-    alert("test");
-    hello();
+    $(document).ready(function () {
+        alert("aaa");
 
-    //
-    // $(document).ready(function () {
-    //     alert("aaa");
-    //
-    //     hello();
-    //     //select click ent
-    //     // btnSelect();
-    // });
+        hello();
+        //select click ent
+        // btnSelect();
+    });
     //]]>
 </script>
 </body>

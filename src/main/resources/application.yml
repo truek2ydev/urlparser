@@ -1,0 +1,19 @@
+# -----------------------------------------------
+# view template
+# -----------------------------------------------
+spring:
+  freemarker:
+    template-loader-path: classpath:/templates
+    suffix: .ftl
+spring.resources.chain.strategy.content.enabled: true
+spring.resources.chain.strategy.content.paths: /**
+
+
+#  mvc:
+#    view.prefix: /WEB-INF/view/
+#    view.suffix: .jsp
+#    static-path-pattern: /resources/**
+
+#  mvc.static-path-pattern:/static/**
+#  resources.static-locations: classpath:/static/
+#  resources.add-mappings: true
