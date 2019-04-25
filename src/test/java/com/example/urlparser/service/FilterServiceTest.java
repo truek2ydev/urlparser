@@ -27,9 +27,7 @@ public class FilterServiceTest {
     @Test
     public void characterFilterTest() {
         String source = TEST_STRING;
-
         String filtered = filterService.charterFilter(source);
-
         assertThat(filtered, is("ABCDabcd1234"));
         assertTrue(filtered.matches("[A-Za-z0-9]*"));
     }
@@ -40,9 +38,7 @@ public class FilterServiceTest {
     @Test
     public void numberFilterTest() {
         String source = TEST_STRING;
-
         String filtered = filterService.numberFilter(source);
-
         assertThat(filtered, is("1234"));
         assertTrue(filtered.matches("[0-9]*"));
     }
@@ -53,9 +49,7 @@ public class FilterServiceTest {
     @Test
     public void numberFilterTest_nonNumber() {
         String source = "ABCDabcd!@#$한글日本の中國";
-
         String filtered = filterService.numberFilter(source);
-
         assertThat(filtered, is(StringUtils.EMPTY));
     }
 
@@ -65,9 +59,7 @@ public class FilterServiceTest {
     @Test
     public void englishFilterTest() {
         String source = TEST_STRING;
-
         String filtered = filterService.englishFilter(source);
-
         assertThat(filtered, is("ABCDabcd"));
         assertTrue(filtered.matches("[A-Za-z]*"));
     }
@@ -77,13 +69,10 @@ public class FilterServiceTest {
      */
     @Test
     public void englishFilterTest_nonEnglish() {
-        String source = "!@#$1234한글日本の中國";;
-
+        String source = "!@#$1234한글日本の中國";
         String filtered = filterService.englishFilter(source);
-
         assertThat(filtered, is(StringUtils.EMPTY));
     }
-
 
     /**
      * 태그 제외 테스트
@@ -91,9 +80,7 @@ public class FilterServiceTest {
     @Test
     public void tagFilterTest_exclude() {
         String source = TAGED_TEST_STRING;
-
         String filtered = filterService.tagFilter(source, TagIncludeType.EXCLUDE);
-
         assertThat(filtered, is("ABCDabcd!@#$1234한글日本の中國"));
     }
 
@@ -103,9 +90,7 @@ public class FilterServiceTest {
     @Test
     public void tagFilterTest_excludeMiddle() {
         String source = "ABCDabcd<a>!@#$1234</a>한글日本の中國";
-
         String filtered = filterService.tagFilter(source, TagIncludeType.EXCLUDE);
-
         assertThat(filtered, is("ABCDabcd!@#$1234한글日本の中國"));
     }
 
@@ -115,9 +100,7 @@ public class FilterServiceTest {
     @Test
     public void tagFilterTest_include() {
         String source = TAGED_TEST_STRING;
-
         String filtered = filterService.tagFilter(source, TagIncludeType.INCLUDE);
-
         assertThat(filtered, is("<a>ABCDabcd!@#$1234한글日本の中國</a>"));
     }
 }

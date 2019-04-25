@@ -1,5 +1,4 @@
 var Main = (function(){
-
     var MESSAGE = {
         REQUIRED_URL: "URL을 입력하여 주십시요!",
         REQUIRED_GROUPSIZE: "출력묶음단위를 입력하여 주십시요!",
@@ -27,6 +26,8 @@ var Main = (function(){
         $('#url').val('');
         $('#tagIncludeType option:eq(0)').prop("selected", true);
         $('#groupSize').val('');
+        $('#result').text('');
+        $('#remainder').text('');
     }
 
     function _formValidate(){

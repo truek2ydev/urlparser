@@ -1,35 +1,56 @@
 package com.example.urlparser.service;
 
 import com.example.urlparser.model.type.TagIncludeType;
+import com.example.urlparser.service.helper.RegxHelper;
 import org.springframework.stereotype.Service;
 
+/**
+ * Regx 기반 문자열 제거 서비스
+ */
 @Service
 public class FilterService {
 
-    public static final String REGX_CHARACTER_FILTER = "[^A-Za-z0-9]";
-    public static final String REGX_ENGLISH_FILTER = "[^A-Za-z]";
-    public static final String REGX_NUMBER_FILTER = "[^0-9]";
-    public static final String REGX_TAG_FILTER = "<[^>]*>";
-
-    /*
-    TODO number, english filter 개별 적용후 삭제 가능
+    /**
+     * 숫자, 영어 문자 추출
+     *
+     * @param target
+     * @return
      */
-    public String charterFilter(String target){
-        return target.replaceAll(REGX_CHARACTER_FILTER, "");
+    public String charterFilter(String target) {
+        return target.replaceAll(RegxHelper.REGX_CHARACTER_FILTER, "");
     }
 
-    public String numberFilter(String target){
-        return target.replaceAll(REGX_NUMBER_FILTER, "");
+    /**
+     * 숫자문자 추출
+     *
+     * @param target
+     * @return
+     */
+    public String numberFilter(String target) {
+        return target.replaceAll(RegxHelper.REGX_NUMBER_FILTER, "");
     }
 
-    public String englishFilter(String target){
-        return target.replaceAll(REGX_ENGLISH_FILTER, "");
+    /**
+     * 영어문자 추출
+     *
+     * @param target
+     * @return
+     */
+    public String englishFilter(String target) {
+        return target.replaceAll(RegxHelper.REGX_ENGLISH_FILTER, "");
     }
 
-    public String tagFilter(String target, TagIncludeType tagIncludeType){
-        switch (tagIncludeType){
+    /**
+     * 태그 포함, 제거 적용 필터
+     *
+     * @param target
+     * @param tagIncludeType
+     * @return
+     */
+    public String tagFilter(String target, TagIncludeType tagIncludeType) {
+        switch (tagIncludeType) {
             case EXCLUDE:
-                return target.replaceAll(REGX_TAG_FILTER, "");
+                return target.replaceAll(RegxHelper.REGX_TAG_FILTER, "");
             default:
                 return target;
         }

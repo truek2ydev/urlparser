@@ -3,7 +3,7 @@ package com.example.urlparser.service;
 import static org.hamcrest.CoreMatchers.is;
 import static org.junit.Assert.assertThat;
 
-import com.example.urlparser.model.ParserResult;
+import com.example.urlparser.model.UrlParserResponse;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.mockito.InjectMocks;
@@ -34,10 +34,10 @@ public class MergeServiceTest {
         String source = "A0A0a1a1BBbb";
         int groupSize = 5;
 
-        ParserResult parserResult = mergeService.groupResult(source, groupSize);
+        UrlParserResponse urlParserResponse = mergeService.groupResult(source, groupSize);
 
-        assertThat(parserResult.getGroup(), is("A0A0a1a1BB"));
-        assertThat(parserResult.getRemainder(), is("bb"));
+        assertThat(urlParserResponse.getGroup(), is("A0A0a1a1BB"));
+        assertThat(urlParserResponse.getRemainder(), is("bb"));
     }
 
     /**
@@ -48,10 +48,10 @@ public class MergeServiceTest {
         String source = "A0A0a1a1BBbb";
         int groupSize = 100;
 
-        ParserResult parserResult = mergeService.groupResult(source, groupSize);
+        UrlParserResponse urlParserResponse = mergeService.groupResult(source, groupSize);
 
-        assertThat(parserResult.getGroup(), is(""));
-        assertThat(parserResult.getRemainder(), is("A0A0a1a1BBbb"));
+        assertThat(urlParserResponse.getGroup(), is(""));
+        assertThat(urlParserResponse.getRemainder(), is("A0A0a1a1BBbb"));
     }
 
 }

@@ -16,5 +16,4 @@ public class ErrorConfig {
         factory.addErrorPages(new ErrorPage(HttpStatus.NOT_FOUND, "/error"));
         return factory;
     }
-
 }

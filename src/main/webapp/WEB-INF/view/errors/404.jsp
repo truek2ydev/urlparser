@@ -3,7 +3,6 @@
 <html lang="ko">
 <head>
     <title>Url Parser</title>
-    <%--<link rel="stylesheet" href="/webjars/bootstrap/3.3.7-1/css/bootstrap.min.css" />--%>
     <link rel="stylesheet" href="/webjars/bootstrap/3.4.1/css/bootstrap.min.css" />
 </head>
 <body>
@@ -18,7 +17,6 @@
             </div>
             <div class="panel-body" align="center">
                 <h4>요청하신 페이지가 존재하지 않습니다!</h4>
-                <%--<a href="/">메인페이지</a>--%>
                 <br/>
                 <a class="btn btn-primary " href="/" role="button" id="btn_main">메인페이지</a>
             </div>

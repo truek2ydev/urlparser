@@ -1,8 +1,13 @@
 package com.example.urlparser.model;
 
-import lombok.Data;
+import lombok.Value;
 
-@Data
+/**
+ * 최종 결과 전달 클래스
+ */
+@Value
 public class UrlParserResponse {
-//    private
+    public static final UrlParserResponse EMPTY = new UrlParserResponse("", "");
+    String group;
+    String remainder;
 }

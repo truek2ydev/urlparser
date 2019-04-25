@@ -1,7 +1,9 @@
 package com.example.urlparser.service;
 
 import com.example.urlparser.exception.UrlHandleException;
+
 import java.util.Locale;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.MessageSource;
 import org.springframework.http.ResponseEntity;
@@ -9,6 +11,9 @@ import org.springframework.stereotype.Service;
 import org.springframework.web.client.ResourceAccessException;
 import org.springframework.web.client.RestTemplate;
 
+/**
+ * URL로 연결하여 BODY 문자열을 제공 클래스
+ */
 @Service
 public class UrlCollectorService {
 
@@ -16,6 +21,7 @@ public class UrlCollectorService {
     MessageSource messageSource;
 
     /**
+     * URL로 연결하여 BODY 문자열 리턴
      *
      * @param url
      * @return

@@ -3,13 +3,12 @@
 <html lang="ko">
 <head>
   <title>Url Parser</title>
-  <%--<link rel="stylesheet" href="/webjars/bootstrap/3.3.7-1/css/bootstrap.min.css" />--%>
   <link rel="stylesheet" href="/webjars/bootstrap/3.4.1/css/bootstrap.min.css" />
 </head>
 <body>
 <div class="container theme-showcase" role="main">
   <div class="page-header">
-    <%--<h1>URL Analysis</h1>--%>
+    <h3>URL Parser</h3>
   </div>
   <div class="row">
     <div class="panel panel-default">

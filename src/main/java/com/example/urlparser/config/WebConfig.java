@@ -16,26 +16,23 @@ public class WebConfig implements WebMvcConfigurer {
 
     @Override
     public void addResourceHandlers(ResourceHandlerRegistry registry) {
-        if( !registry.hasMappingForPattern("/webjars/**")){
-            registry
-                .addResourceHandler("/webjars/**")
-                .addResourceLocations("/webjars/");
+        if (!registry.hasMappingForPattern("/webjars/**")) {
+            registry.addResourceHandler("/webjars/**")
+                    .addResourceLocations("/webjars/");
         }
 
-        if( !registry.hasMappingForPattern("/resources/**")) {
-            registry
-                .addResourceHandler("/resources/**")
-                .addResourceLocations("/resources/");
+        if (!registry.hasMappingForPattern("/resources/**")) {
+            registry.addResourceHandler("/resources/**")
+                    .addResourceLocations("/resources/");
         }
 
-        registry
-            .addResourceHandler("swagger-ui.html")
-            .addResourceLocations("classpath:/META-INF/resources/");
+        registry.addResourceHandler("swagger-ui.html")
+                .addResourceLocations("classpath:/META-INF/resources/");
     }
 
     @Bean
     public InternalResourceViewResolver jspViewResolver() {
-        InternalResourceViewResolver resolver= new InternalResourceViewResolver();
+        InternalResourceViewResolver resolver = new InternalResourceViewResolver();
         resolver.setPrefix("/WEB-INF/view/");
         resolver.setSuffix(".jsp");
         return resolver;
@@ -43,9 +40,7 @@ public class WebConfig implements WebMvcConfigurer {
 
     @Bean
     public MessageSource messageSource() {
-        ReloadableResourceBundleMessageSource messageSource
-            = new ReloadableResourceBundleMessageSource();
-
+        ReloadableResourceBundleMessageSource messageSource = new ReloadableResourceBundleMessageSource();
         messageSource.setBasename("classpath:messages");
         messageSource.setDefaultEncoding("UTF-8");
         return messageSource;

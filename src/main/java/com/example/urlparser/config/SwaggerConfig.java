@@ -18,19 +18,18 @@ public class SwaggerConfig {
     @Bean
     public Docket api() {
         return new Docket(DocumentationType.SWAGGER_2)
-            .groupName("URL Parser APIAPI")
-            .apiInfo(apiInfo())
-            .select()
-            .apis(RequestHandlerSelectors.withMethodAnnotation(ApiOperation.class))
-            .paths(PathSelectors.any())
-            .build();
+                .groupName("URL Parser API")
+                .apiInfo(apiInfo())
+                .select()
+                .apis(RequestHandlerSelectors.withMethodAnnotation(ApiOperation.class))
+                .paths(PathSelectors.any())
+                .build();
     }
 
     private ApiInfo apiInfo() {
         return new ApiInfoBuilder()
-            .title("URL Parser API")
-            .description("URL Parser API")
-            .build();
+                .title("URL Parser API")
+                .description("URL Parser API")
+                .build();
     }
-
 }
