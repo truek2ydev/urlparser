@@ -25,7 +25,7 @@ import org.springframework.test.context.junit4.SpringRunner;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest(webEnvironment = WebEnvironment.RANDOM_PORT)
-public class UrlParserApiControllerIntegrationTest {
+public class UrlParserApiControllerTest {
 
     private static final ParameterizedTypeReference<ParserResult>
         TYPE_PARSER_RESULT = new ParameterizedTypeReference<ParserResult>() {
@@ -44,10 +44,10 @@ public class UrlParserApiControllerIntegrationTest {
 
     /**
      * url parser 성공 테스트
+     * @throws UnsupportedEncodingException
      */
     @Test
-    public void urlParser() throws UnsupportedEncodingException {
-
+    public void urlParser_success() throws UnsupportedEncodingException {
         String uri = "/api/url/parser?url=%s&tagIncludeType=%s&groupSize=%d";
         String targetUrl = URLEncoder.encode("http://www.google.com", "utf-8");
         TagIncludeType tagIncludeType = TagIncludeType.EXCLUDE;
@@ -59,12 +59,11 @@ public class UrlParserApiControllerIntegrationTest {
 
         assertThat(responseEntity.getStatusCode(), is(HttpStatus.OK));
         assertThat(responseEntity.getBody().getGroup(), not(isEmptyString()));
-
     }
-
 
     /**
      * 전달 파라미터 확인 테스트
+     * @throws UnsupportedEncodingException
      */
     @Test
     public void urlParser_requiredArgument() throws UnsupportedEncodingException {
@@ -82,6 +81,7 @@ public class UrlParserApiControllerIntegrationTest {
 
     /**
      * 전달 url 오류 테스트
+     * @throws UnsupportedEncodingException
      */
     @Test
     public void urlParser_invalidUrl() throws UnsupportedEncodingException {

@@ -1,9 +1,27 @@
+# -----------------------------------------------
+# spring mvc
+# -----------------------------------------------
 spring:
   mvc:
     view.prefix: /WEB-INF/view/
     view.suffix: .jsp
+    static-path-pattern: /resources/**
+  resources.cache.cachecontrol.no-cache: true
 
+# -----------------------------------------------
+# logging
+# -----------------------------------------------
 logging:
   level:
-    com.example: DEBUG
+    com.example: INFO
     org.springframework.web: DEBUG
+
+# -----------------------------------------------
+# custom properties
+# -----------------------------------------------
+app:
+  regx:
+    target: "[^A-Za-z0-9]"
+    english: "[^A-Za-z]"
+    number: "[^0-9]"
+    tag: "<[^>]*>"

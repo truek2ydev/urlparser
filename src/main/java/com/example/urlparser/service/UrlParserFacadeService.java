@@ -8,13 +8,11 @@ import org.springframework.stereotype.Service;
 
 @Service
 public class UrlParserFacadeService {
-//    @Autowired
+
     private  final UrlCollectorService urlCollectorService;
 
-//    @Autowired
     private final ParserService parserService;
 
-//    @Autowired
     private  final SortService sortService;
 
     private  final FilterService filterService;
@@ -32,7 +30,6 @@ public class UrlParserFacadeService {
     }
 
     public ParserResult execute(String url, TagIncludeType tagIncludeType, int groupSize) {
-        // TODO validate
         String contents = urlCollectorService.getContent(url);
 
         String tagFilteredContents = filterService.tagFilter(contents, tagIncludeType);
