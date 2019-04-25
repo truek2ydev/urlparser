@@ -1,7 +1,7 @@
 # Project Overview 
 * Project Name : urlparser
 * Project Base : Springboot, Java8, Maven 
-* Usecase : 입력된 url의 컨텐츠 문자열을 숫자/영문을 구분하여 필터링/추출/정렬/병합하여 결과 출력 
+* Usecase : 입력된 url의 컨텐츠 문자열을 숫자/영문을 구분하여 필터링/추출/정렬/병합/그룹핑 하여 결과 출력 
   
 
 # Page Example 
